@@ -107,14 +107,17 @@ make small incremental changes that transform this method into code that "reads 
 ### Incremental Refactoring
 >Remember to make a small change, re-run tests, and **always** commit on green.
 
-**Idea**: I wonder if the item's `name`, `quality` and `sellIn` values were extracted into temporary variabes if the code would be 
+**Idea 1**: I wonder if the item's `name`, `quality` and `sellIn` values were extracted into temporary variabes if the code would be 
 any clearer.  I used IntelliJ's `Refactor -> Extract... -> Variable` 
 [feature](https://www.jetbrains.com/help/idea/extract-variable.html) to create temporary variables.
 
 1. Extract `items[i].name` into a temporary variable and replace all 8 occurrences.  Run the tests and commit on green.
 2. Extract `items[i].quality` and replace all 22 occurrences in the code. Run tests and they are red.  So what happened?
 At this point you need to [revert](https://git-scm.com/docs/git-revert) your changes.
-3. Extract `items[i].quality` round two.  I realize that the temporary variable `quality` is being 
+3. Extract `items[i].quality`, round two.  I realize that the temporary variable `quality` is being 
 [mutated](https://en.wikipedia.org/wiki/Immutable_object) throughout the method.  So in this second round I set the 
-`items[i].quality = quality;` at the end of each for loop.  I run the tests and they go green so I commit.
+`items[i].quality = quality;` at the end of each for loop.  I run the tests and they go green so I commit on green.
+4. I apply the same pattern to `items[i].sellIn` because it is mutated too.  Run the tests and commit on green.
 
+**Outcome 1**: Pulling out these temporary variables makes it a little more readable.  It remove visual clutter that 
+makes the code harder to read.
