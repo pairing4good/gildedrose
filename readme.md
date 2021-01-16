@@ -65,7 +65,8 @@ overall behavior
         }
     ```
     - The `updateQuality` method returns `void` so we need to test its 
-    [side effect](https://en.wikipedia.org/wiki/Side_effect_(computer_science)) through the `Item` classes' state.
+    [side effect](https://en.wikipedia.org/wiki/Side_effect_(computer_science)) through the `Item` classes' 
+    [data](https://en.wikipedia.org/wiki/Object-oriented_programming) or state.
     
 1. Identify test coverage
     Either debug the method under test with breakpoints in each logical branch or use a code overage tool to identify
