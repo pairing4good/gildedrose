@@ -1,7 +1,7 @@
 # Gilded Rose Kata
 
 The Gilded Rose kata provides an example of the kind of code we often find in 
-[legacy](https://en.wikipedia.org/wiki/Legacy_code#Modern_interpretations) codebases.  The repo provides a 
+[legacy](https://en.wikipedia.org/wiki/Legacy_code#Modern_interpretations) codebases.  This repo provides a 
 step-by-step approach to characterization testing and [refactoring](https://en.wikipedia.org/wiki/Code_refactoring) 
 this code. 
 
