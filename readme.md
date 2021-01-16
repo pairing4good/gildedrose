@@ -75,4 +75,41 @@ overall behavior
    Write enough tests to cover all of the method-under-test's conditional behavior
    
 ### Refactoring
+>“Clean code is simple and direct. Clean code reads like well-written [prose](https://en.wikipedia.org/wiki/Prose). 
+Clean code never obscures the designer’s intent but rather is full of crisp abstractions and straightforward lines 
+of control." - Grady Booch
+
+>"Refactoring is a disciplined technique for restructuring an existing body of code, altering its internal structure 
+__without changing its external behavior__." - Martin Fowler
+
+The objective of refactoring is to incrementally improve code so that it is easier to understand and maintain.  The 
+only way that you can ensure that you did not change the external behavior of an application is to first constrain the
+code with automated test accountability.  Once this is in place, then and only then, can you begin to refactor.
+Refactoring is often applied a little bit at a time through incremental changes.  After every change run the tests to 
+ensure that the change did not break anything.  
+
+In order to identify refactoring opportunities, follow your nose.  What doesn't smell quite right?  Martin Fowler 
+captures many of these [code smells](https://martinfowler.com/bliki/CodeSmell.html) in his book 
+[Refactoring](https://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672).  (Sandi Metz's 
+[talk](https://youtu.be/D4auWwMsEnY) on code smells is a great way to get your head around this idea.)
+
+#### Code Smells
+In the method-under-test `updateQuality` the following smells pop out at me:
+- **Too Long**: The method is long enough I have to scroll to see it all
+- **Too Many Responsibilities**: The method does a lot of things
+- **Not [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)**: There's a lot of duplicated concepts
+- **Too Complex**: The nested if/else structure is several layers deep and difficult to follow
+- **Not Clear**: Many of the conditions use `!` to invert the condition
+
+While the first thing that pops out to me is the length of the method, I won't try to tackle that first.  I want to
+make small incremental changes that transform this method into code that "reads like well-written prose"
+
+### Incremental Refactoring
+>Remember to make a small change, re-run tests, and **always** commit on green.
+
+**Idea**: I wonder if the item's `name`, `quality` and `sellIn` values were extracted into temporary variabes if the code would be 
+any clearer.  I used IntelliJ's `Refactor -> Extract... -> Variable` 
+[feature](https://www.jetbrains.com/help/idea/extract-variable.html) to create temporary variables.
+
+1. Extract `items[i].name` into a temporary variable and replace all 8 occurrences.  Run the tests and commit on green.
 
