@@ -2,7 +2,7 @@
 
 The Gilded Rose kata provides an example of the kind of code we often find in 
 [legacy](https://en.wikipedia.org/wiki/Legacy_code#Modern_interpretations) codebases.  The repo provides a 
-step-by-step approach to restructuring, testing and [refactoring](https://en.wikipedia.org/wiki/Code_refactoring) 
+step-by-step approach to characterization testing and [refactoring](https://en.wikipedia.org/wiki/Code_refactoring) 
 this code. 
 
 > "Michael Feathers introduced a definition of legacy code as code without tests" 
