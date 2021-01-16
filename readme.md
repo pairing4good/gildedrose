@@ -68,10 +68,9 @@ overall behavior
     [side effect](https://en.wikipedia.org/wiki/Side_effect_(computer_science)) through the `Item` classes' 
     [data](https://en.wikipedia.org/wiki/Object-oriented_programming) or state.
     
-1. Identify test coverage
-    Either debug the method under test with breakpoints in each logical branch or use a code overage tool to identify
-    the impact of the test above. (IntelliJ has built in code coverage 
-    https://www.jetbrains.com/help/idea/running-test-with-coverage.html)
+1. In order to identify the resulting test coverage, either debug the method under test with breakpoints in each 
+logical branch or use a code overage tool to identify the impact of the test above. (IntelliJ has built in code 
+coverage https://www.jetbrains.com/help/idea/running-test-with-coverage.html)
     
 1. Write Additional Characterization Tests
    Write enough tests to cover all of the method-under-test's conditional behavior
