@@ -95,8 +95,8 @@ captures many of these [code smells](https://martinfowler.com/bliki/CodeSmell.ht
 [talk](https://youtu.be/D4auWwMsEnY) on code smells is a great way to get your head around this idea.)
 
 #### Code Smells
-In the method-under-test `updateQuality` the following smells pop out at me:
-- **Too Long**: The method is long enough I have to scroll to see it all
+In the method-under-test `updateQuality`, the following smells pop out at me:
+- **Too Long**: The method is long enough that I have to scroll to see it all
 - **Too Many Responsibilities**: The method does a lot of things
 - **Not [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)**: There's a lot of duplicated concepts
 - **Too Complex**: The nested if/else structure is several layers deep and difficult to follow
@@ -120,5 +120,5 @@ At this point you need to [revert](https://git-scm.com/docs/git-revert) your cha
 `items[i].quality = quality;` at the end of each for loop.  I run the tests and they go green so I commit on green.
 4. I apply the same pattern to `items[i].sellIn` because it is mutated too.  Run the tests and commit on green.
 
-**Outcome 1**: Pulling out these temporary variables makes it a little more readable.  It remove visual clutter that 
+**Outcome 1**: Pulling out these temporary variables makes it a little more readable.  It removed visual clutter that 
 makes the code harder to read.
