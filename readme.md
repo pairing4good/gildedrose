@@ -72,8 +72,8 @@ overall behavior
 logical branch or use a code coverage tool to identify the impact of the test above. (IntelliJ has built in code 
 coverage https://www.jetbrains.com/help/idea/running-test-with-coverage.html)
     
-1. Write Additional Characterization Tests
-   Write enough tests to cover all of the method-under-test's conditional behavior
+1. Write additional characterization tests until there are enough tests to cover all of the method-under-test's 
+conditional behavior.
    
 ### Refactoring
 >“Clean code is simple and direct. Clean code reads like well-written [prose](https://en.wikipedia.org/wiki/Prose). 
