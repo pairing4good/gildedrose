@@ -69,7 +69,7 @@ overall behavior
     [data](https://en.wikipedia.org/wiki/Object-oriented_programming) or state.
     
 1. In order to identify the resulting test coverage, either debug the method under test with breakpoints in each 
-logical branch or use a code overage tool to identify the impact of the test above. (IntelliJ has built in code 
+logical branch or use a code coverage tool to identify the impact of the test above. (IntelliJ has built in code 
 coverage https://www.jetbrains.com/help/idea/running-test-with-coverage.html)
     
 1. Write Additional Characterization Tests
