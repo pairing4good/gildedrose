@@ -43,8 +43,8 @@ overall behavior
     - Since we most likely don't know how the method-under-test works, use the simplest values possible.  For objects 
     use `null` and for primitives use their 
     [default](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html) values.
-    - This causes a `NullPointerException` when we run the test.  Replace the offending value with a value that will avoid
-    the `Exception` and rerun the test. 
+    - This initial test with default Item values, causes a `NullPointerException` when we run the test.  Replace the 
+    offending value with a value that will avoid the `Exception` and rerun the test. 
     
     ```java
     Item[] items = {new Item("", 0, 0)};
