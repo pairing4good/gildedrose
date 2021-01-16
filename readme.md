@@ -40,7 +40,7 @@ overall behavior
             gildedRose.updateQuality();
         }
     ```
-    - Since we most likely don't know how the method-under-test works so use the simplest values possible.  For objects 
+    - Since we most likely don't know how the method-under-test works, use the simplest values possible.  For objects 
     use `null` and for primitives use their default values (int = 0, boolean = false, etc.).
     - This causes a `NullPointerException` when we run the test.  Replace the offending value with a value that will avoid
     the `Exception` and rerun the test. 
@@ -64,7 +64,7 @@ overall behavior
         }
     ```
     - The `updateQuality` method returns `void` so we need to test its 
-    [side effect](https://en.wikipedia.org/wiki/Side_effect_(computer_science\)) through the `Item` classes' state.
+    [side effect](https://en.wikipedia.org/wiki/Side_effect_(computer_science)) through the `Item` classes' state.
     
 1. Identify test coverage
     Either debug the method under test with breakpoints in each logical branch or use a code overage tool to identify
