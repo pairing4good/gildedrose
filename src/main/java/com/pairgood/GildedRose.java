@@ -21,18 +21,18 @@ public class GildedRose {
                     }
                 }
             } else {
-                if (quality < 50) {
+                if (isLessThanMax(quality)) {
                     quality = increaseByOne(quality);
 
                     if (name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                         if (sellIn < 11) {
-                            if (quality < 50) {
+                            if (isLessThanMax(quality)) {
                                 quality = increaseByOne(quality);
                             }
                         }
 
                         if (sellIn < 6) {
-                            if (quality < 50) {
+                            if (isLessThanMax(quality)) {
                                 quality = increaseByOne(quality);
                             }
                         }
@@ -56,7 +56,7 @@ public class GildedRose {
                         quality = zeroOut(quality);
                     }
                 } else {
-                    if (quality < 50) {
+                    if (isLessThanMax(quality)) {
                         quality = increaseByOne(quality);
                     }
                 }
@@ -64,6 +64,10 @@ public class GildedRose {
             items[i].quality = quality;
             items[i].sellIn = sellIn;
         }
+    }
+
+    private boolean isLessThanMax(int value) {
+        return value < 50;
     }
 
     private int zeroOut(int value) {
