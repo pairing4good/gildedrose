@@ -86,7 +86,7 @@ __without changing its external behavior__." - Martin Fowler
 The objective of refactoring is to incrementally improve code so that it is easier to understand and maintain.  The 
 only way that you can ensure that you did not change the external behavior of an application is to first constrain the
 code with automated test accountability.  Once this is in place, then and only then, can you begin to refactor.
-Refactoring is often applied a little bit at a time through incremental changes.  After every change run the tests to 
+Refactoring is often applied a little bit at a time through incremental changes.  After every change, run the tests to 
 ensure that the change did not break anything.  
 
 In order to identify refactoring opportunities, follow your nose.  What doesn't smell quite right?  Martin Fowler 
