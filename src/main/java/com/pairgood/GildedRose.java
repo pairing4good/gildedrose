@@ -22,18 +22,18 @@ public class GildedRose {
                 }
             } else {
                 if (quality < 50) {
-                    quality = quality + 1;
+                    quality = increaseByOne(quality);
 
                     if (name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                         if (sellIn < 11) {
                             if (quality < 50) {
-                                quality = quality + 1;
+                                quality = increaseByOne(quality);
                             }
                         }
 
                         if (sellIn < 6) {
                             if (quality < 50) {
-                                quality = quality + 1;
+                                quality = increaseByOne(quality);
                             }
                         }
                     }
@@ -57,13 +57,17 @@ public class GildedRose {
                     }
                 } else {
                     if (quality < 50) {
-                        quality = quality + 1;
+                        quality = increaseByOne(quality);
                     }
                 }
             }
             items[i].quality = quality;
             items[i].sellIn = sellIn;
         }
+    }
+
+    private int increaseByOne(int value) {
+        return value + 1;
     }
 
     private int decreaseByOne(int value) {
