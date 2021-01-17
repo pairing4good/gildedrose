@@ -138,7 +138,8 @@ commit on green.
 on green.
 1. Extract the condition `quality < 50` into a private method with the following signature 
 `private boolean isLessThanMax(int value)`.  This new private method replaced 4 `x < 50` patterns. I named it 
-`isLessThanMax` because the conditional check `isLessThanMax(quality)` is always paired with `increaseByOne(quality)`.
+`isLessThanMax` because the conditional check `isLessThanMax(quality)` is always paired with `increaseByOne(quality)` 
+which prevents the quantity from increasing once max quality is reached.
 Run the tests and commit on green.
 1. Extract the paired structure of checking for max quality before increasing the quality.  This new private method 
 replaced 3 of the following patterns:
