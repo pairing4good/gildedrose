@@ -85,4 +85,22 @@ public class GildedRoseTest {
         assertEquals(-2, firstItem.sellIn);
         assertEquals(12, firstItem.quality);
     }
+
+    @Test
+    public void updateQuality_MultipleItems() {
+        Item firstItem = new Item("Not Aged Brie", 1, 1);
+        Item secondItem = new Item("Aged Brie", 1, 1);
+        Item[] items = {firstItem, secondItem};
+        GildedRose gildedRose = new GildedRose(items);
+
+        gildedRose.updateQuality();
+
+        assertEquals("Not Aged Brie", firstItem.name);
+        assertEquals(0, firstItem.sellIn);
+        assertEquals(0, firstItem.quality);
+
+        assertEquals("Aged Brie", secondItem.name);
+        assertEquals(0, secondItem.sellIn);
+        assertEquals(2, secondItem.quality);
+    }
 }
