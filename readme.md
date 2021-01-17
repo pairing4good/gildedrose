@@ -137,7 +137,8 @@ commit on green.
 `private int zeroOut(int value)`.  This new private method replaced 1 `x = x - x` pattern. Run the tests and commit 
 on green.
 1. Extract the condition `quality < 50` into a private method with the following signature 
-`private boolean isLessThanMax(int value)`.  This new private method replaced 4 `x < 50` patterns. Run the tests and 
-commit on green.
+`private boolean isLessThanMax(int value)`.  This new private method replaced 4 `x < 50` patterns. I named it 
+`isLessThanMax` because the conditional check `isLessThanMax(quality)` is always paired with `increaseByOne(quality)`.
+Run the tests and commit on green.
 
 **Outcome 2**: 
