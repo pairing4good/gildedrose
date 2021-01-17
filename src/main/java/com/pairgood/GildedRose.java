@@ -53,7 +53,7 @@ public class GildedRose {
                             }
                         }
                     } else {
-                        quality = quality - quality;
+                        quality = zeroOut(quality);
                     }
                 } else {
                     if (quality < 50) {
@@ -64,6 +64,10 @@ public class GildedRose {
             items[i].quality = quality;
             items[i].sellIn = sellIn;
         }
+    }
+
+    private int zeroOut(int value) {
+        return value - value;
     }
 
     private int increaseByOne(int value) {
