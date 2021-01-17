@@ -151,6 +151,7 @@ replaced 3 of the following patterns:
         return quality;
     }
    ```
-    Run the tests and commit.
+   By encapsulating this check before increasing quality together it makes this a single named reusable concept. 
+   Run the tests and commit.
 
 **Outcome 2**: 
