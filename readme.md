@@ -140,5 +140,16 @@ on green.
 `private boolean isLessThanMax(int value)`.  This new private method replaced 4 `x < 50` patterns. I named it 
 `isLessThanMax` because the conditional check `isLessThanMax(quality)` is always paired with `increaseByOne(quality)`.
 Run the tests and commit on green.
+1. Extract the paired structure of checking for max quality before increasing the quality.  This new private method 
+replaced 3 of the following patterns:
+    ```java
+    private int increaseQuality(int quality) {
+        if (isLessThanMax(quality)) {
+            quality = increaseByOne(quality);
+        }
+        return quality;
+    }
+   ```
+    Run the tests and commit.
 
 **Outcome 2**: 
