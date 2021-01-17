@@ -109,16 +109,27 @@ make small incremental changes that transform this method into code that "reads 
 >Remember to make a small change, re-run tests, and **always** commit on green.
 
 **Idea 1**: I wonder if the item's `name`, `quality` and `sellIn` values were extracted into temporary variabes if the code would be 
-any clearer.  I used IntelliJ's `Refactor -> Extract... -> Variable` 
+any clearer.  I used IntelliJ's `Refactor -> Extract -> Variable...` 
 [feature](https://www.jetbrains.com/help/idea/extract-variable.html) to create temporary variables.
 
 1. Extract `items[i].name` into a temporary variable and replace all 8 occurrences.  Run the tests and commit on green.
-2. Extract `items[i].quality` and replace all 22 occurrences in the code. Run tests and they are red.  So what happened?
+1. Extract `items[i].quality` and replace all 22 occurrences in the code. Run tests and they are red.  So what happened?
 At this point you need to [revert](https://git-scm.com/docs/git-revert) your changes.
-3. Extract `items[i].quality`, round two.  I realize that the temporary variable `quality` is being 
+1. Extract `items[i].quality`, round two.  I realize that the temporary variable `quality` is being 
 [mutated](https://en.wikipedia.org/wiki/Immutable_object) throughout the method.  So in this second round I set the 
 `items[i].quality = quality;` at the end of each for loop.  I run the tests and they go green so I commit on green.
-4. I apply the same pattern to `items[i].sellIn` because it is mutated too.  Run the tests and commit on green.
+1. I apply the same pattern to `items[i].sellIn` because it is mutated too.  Run the tests and commit on green.
 
 **Outcome 1**: Pulling out these temporary variables makes it a little more readable.  It removed visual clutter that 
 makes the code harder to read.
+
+**Idea 2**: I see a lot of duplicated concepts that could be extracted into private methods.  This could make it more 
+readable and centralize each idea into a single place.  I used IntelliJ's `Refactor -> Extract -> Method...` 
+[feature](https://www.jetbrains.com/help/rider/Refactorings__Extract_Method.html) to create private methods.
+
+1. Extract `quality = quality - 1` into a private method with the following signature 
+`private int decreaseByOne(int value)`.  Since this signature takes an `int` this also applied to `sellIn = sellIn - 1`.
+This new private method replaced 3 `x = x - 1` patterns. Run the tests and commit on green.
+1. 
+
+**Outcome 2**: 
