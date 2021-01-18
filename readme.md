@@ -154,4 +154,35 @@ replaced 3 of the following patterns:
    By encapsulating this check before increasing quality together it makes this a single named reusable concept. 
    Run the tests and commit.
 
-**Outcome 2**: 
+**Outcome 2**: Pulling out private methods increased clarity within the code and started to paint a picture of the
+different responsibilities within the `GildedRose` class.  As I look through the resulting private methods I see two
+responsibilities emerging:
+1. Quality related responsibilities
+    ```java
+    private int increaseQuality(int quality) {
+        if (isLessThanMax(quality)) {
+            quality = increaseByOne(quality);
+        }
+        return quality;
+    }
+
+    private boolean isLessThanMax(int value) {
+        return value < MAX_QUALITY;
+    }
+    ```
+2. Math related respnsibilites
+    ```java
+    private int zeroOut(int value) {
+        return value - value;
+    }
+
+    private int increaseByOne(int value) {
+        return value + 1;
+    }
+
+    private int decreaseByOne(int value) {
+        return value - 1;
+    }
+    ```
+Eventually these groups of methods will be pulled out of the `GildedRose` class and organized in new classes with a 
+[single responsibility](https://en.wikipedia.org/wiki/Single-responsibility_principle).
