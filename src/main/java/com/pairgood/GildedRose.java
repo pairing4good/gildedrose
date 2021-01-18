@@ -1,6 +1,7 @@
 package com.pairgood;
 
 public class GildedRose {
+    public static final int MAX_QUALITY = 50;
     Item[] items;
 
     public GildedRose(Item[] items) {
@@ -68,7 +69,7 @@ public class GildedRose {
     }
 
     private boolean isLessThanMax(int value) {
-        return value < 50;
+        return value < MAX_QUALITY;
     }
 
     private int zeroOut(int value) {

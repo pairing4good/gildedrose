@@ -103,4 +103,19 @@ public class GildedRoseTest {
         assertEquals(0, secondItem.sellIn);
         assertEquals(2, secondItem.quality);
     }
+
+
+
+    @Test
+    public void updateQuality_AgedBrie_WithMaxQuality() {
+        Item firstItem = new Item("Aged Brie", 1, 50);
+        Item[] items = {firstItem};
+        GildedRose gildedRose = new GildedRose(items);
+
+        gildedRose.updateQuality();
+
+        assertEquals("Aged Brie", firstItem.name);
+        assertEquals(0, firstItem.sellIn);
+        assertEquals(50, firstItem.quality);
+    }
 }
