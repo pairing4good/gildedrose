@@ -42,7 +42,9 @@ public class GildedRose {
             }
 
             if (sellIn < 0) {
-                if (!name.equals("Aged Brie")) {
+                if (name.equals("Aged Brie")) {
+                    quality = increaseQuality(quality);
+                } else {
                     if (!name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                         if (quality > 0) {
                             if (!name.equals("Sulfuras, Hand of Ragnaros")) {
@@ -52,8 +54,6 @@ public class GildedRose {
                     } else {
                         quality = zeroOut(quality);
                     }
-                } else {
-                    quality = increaseQuality(quality);
                 }
             }
             items[i].quality = quality;
