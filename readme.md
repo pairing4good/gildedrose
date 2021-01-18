@@ -131,7 +131,7 @@ readable and centralize each idea into a single place.  I used IntelliJ's `Refac
 `private int decreaseByOne(int value)`.  Since this signature takes an `int` this also applied to `sellIn = sellIn - 1`.
 This new private method replaced 3 `x = x - 1` patterns. Run the tests and commit on green.
 1. Extract `quality = quality + 1` into a private method with the following signature 
-`private int increaseByOne(int value)`.  This new private method replaced 3 `x = x - 1` patterns. Run the tests and 
+`private int increaseByOne(int value)`.  This new private method replaced 3 `x = x + 1` patterns. Run the tests and 
 commit on green.
 1. Extract `quality = quality - quality` into a private method with the following signature 
 `private int zeroOut(int value)`.  This new private method replaced 1 `x = x - x` pattern. Run the tests and commit 
