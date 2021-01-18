@@ -186,3 +186,11 @@ possible responsibility themes emerging:
     ```
 Eventually these groups of methods will be pulled out of the `GildedRose` class and organized in new classes with a 
 [single responsibility](https://en.wikipedia.org/wiki/Single-responsibility_principle).
+
+**Idea 3**: I would like to flip the conditional statements so they don't include `!` which inverts the condition.  It
+is more natural to state the positive case rather than the negative case.
+1. Flip the conditional statement to remove the `!`'s from the conditional statment 
+`!name.equals("Aged Brie") && !name.equals("Backstage passes to a TAFKAL80ETC concert")`.  (The `&&` will need to be 
+flipped to `||`.)
+
+**Outcome 3**: 
