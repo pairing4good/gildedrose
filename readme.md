@@ -156,8 +156,8 @@ replaced 3 of the following patterns:
 
 **Outcome 2**: Pulling out private methods increased clarity within the code and started to paint a picture of the
 different responsibilities within the `GildedRose` class.  As I look through the resulting private methods I see two
-responsibilities emerging:
-1. Quality related responsibilities
+possible responsibility themes emerging:
+1. Quality related theme
     ```java
     private int increaseQuality(int quality) {
         if (isLessThanMax(quality)) {
@@ -170,7 +170,7 @@ responsibilities emerging:
         return value < MAX_QUALITY;
     }
     ```
-2. Math related respnsibilites
+2. Math related theme
     ```java
     private int zeroOut(int value) {
         return value - value;
