@@ -193,5 +193,15 @@ is more natural to state the positive case rather than the negative case.
 `!name.equals("Aged Brie") && !name.equals("Backstage passes to a TAFKAL80ETC concert")`.  (The `&&` will need to be 
 flipped to `||`.)
 1. Flip the conditional statement to remove the `!`'s from the conditional statement `!name.equals("Aged Brie")`.
-
-**Outcome 3**: 
+1. I attempted to remove the `!` from `!name.equals("Sulfuras, Hand of Ragnaros")` and flip the condition but the 
+resulting structure was longer and less readable than what I started with so I reverted my changes.
+    ```java
+                if (name.equals("Sulfuras, Hand of Ragnaros")) {
+                }else{
+                    sellIn = decreaseByOne(sellIn);
+                }
+    ```
+**Outcome 3**: Inverting conditional statements in order to remove `!` and telling the positive narritive rather than
+negative case increases readability.  Furthermore, the addition of `!` is difficult to see and can create confusion and 
+an incorrect understanding of the code.  While I was unable to flip all of the negative case conditions to be positive, 
+the overall flow of the code is easier to read.
