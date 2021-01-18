@@ -86,7 +86,7 @@ __without changing its external behavior__." - Martin Fowler
 The objective of refactoring is to incrementally improve code so that it is easier to understand and maintain.  The 
 only way that you can ensure that you did not change the external behavior of an application is to first constrain the
 code with automated test accountability.  Once this is in place, then and only then, can you begin to refactor.
-Refactoring is often applied a little bit at a time through incremental changes.  After every change run the tests to 
+Refactoring is often applied a little bit at a time through incremental changes.  After every change, run the tests to 
 ensure that the change did not break anything.  
 
 In order to identify refactoring opportunities, follow your nose.  What doesn't smell quite right?  Martin Fowler 
@@ -138,7 +138,8 @@ commit on green.
 on green.
 1. Extract the condition `quality < 50` into a private method with the following signature 
 `private boolean isLessThanMax(int value)`.  This new private method replaced 4 `x < 50` patterns. I named it 
-`isLessThanMax` because the conditional check `isLessThanMax(quality)` is always paired with `increaseByOne(quality)`.
+`isLessThanMax` because the conditional check `isLessThanMax(quality)` is always paired with `increaseByOne(quality)` 
+which prevents the quantity from increasing once max quality is reached.
 Run the tests and commit on green.
 1. Extract the paired structure of checking for max quality before increasing the quality.  This new private method 
 replaced 3 of the following patterns:
@@ -150,6 +151,7 @@ replaced 3 of the following patterns:
         return quality;
     }
    ```
-    Run the tests and commit.
+   By encapsulating this check before increasing quality together it makes this a single named reusable concept. 
+   Run the tests and commit.
 
 **Outcome 2**: 
