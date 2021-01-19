@@ -18,6 +18,7 @@ public class GildedRose {
             if (name.equals("Backstage passes to a TAFKAL80ETC concert") && sellIn < 11) {
                 quality = increaseQuality(quality);
             }
+
             if (name.equals("Backstage passes to a TAFKAL80ETC concert") && sellIn < 6) {
                 quality = increaseQuality(quality);
             }
@@ -30,14 +31,14 @@ public class GildedRose {
             }
 
             if (!name.equals("Aged Brie") && !name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                quality = decreaseByOne(quality);
+                quality = decreaseQuality(quality);
             }
 
             if(!name.equals("Aged Brie") &&
                     !name.equals("Backstage passes to a TAFKAL80ETC concert") &&
                     !name.equals("Sulfuras, Hand of Ragnaros") &&
                     sellIn < 0){
-                quality = decreaseByOne(quality);
+                quality = decreaseQuality(quality);
             }
 
             if (!name.equals("Sulfuras, Hand of Ragnaros")) {
