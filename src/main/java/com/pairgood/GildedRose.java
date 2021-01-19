@@ -45,14 +45,14 @@ public class GildedRose {
                 if (name.equals("Aged Brie")) {
                     quality = increaseQuality(quality);
                 } else {
-                    if (!name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+                    if (name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+                        quality = zeroOut(quality);
+                    } else {
                         if (quality > 0) {
                             if (!name.equals("Sulfuras, Hand of Ragnaros")) {
                                 quality = decreaseByOne(quality);
                             }
                         }
-                    } else {
-                        quality = zeroOut(quality);
                     }
                 }
             }

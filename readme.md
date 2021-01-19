@@ -194,7 +194,8 @@ is more natural to state the positive case rather than the negative case.
 flipped to `||`.)  Run the tests and commit on green.
 1. Flip the conditional statement to remove the `!`'s from the conditional statement `!name.equals("Aged Brie")`.
 Run the tests and commit on green.
-
+1. Flip the conditional statement to remove the `!`'s from the conditional statement 
+`!name.equals("Backstage passes to a TAFKAL80ETC concert")`. Run the tests and commit on green.
 1. I attempted to remove the `!` from `!name.equals("Sulfuras, Hand of Ragnaros")` and flip the condition but the 
 resulting structure was longer and less readable than what I started with so I reverted my changes.
     ```java
