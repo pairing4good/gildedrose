@@ -218,6 +218,6 @@ Run the tests and commit on green.
 `increaseQuality` instead. Run the tests and commit on green.
 1. Move `if (name.equals("Backstage passes to a TAFKAL80ETC concert"))` up to the same level as 
 `if (name.equals("Aged Brie"))`. Run the tests and commit on green.
-
+1. Combine nested if's as `&&` conditions.  Run the tests and commit on green.
 
 **Outcome 4**: 
