@@ -151,7 +151,7 @@ replaced 3 of the following patterns:
         return quality;
     }
    ```
-   By encapsulating this check before increasing quality together it makes this a single named reusable concept. 
+   By encapsulating this check before increasing quality together it makes this a single, named, reusable concept. 
    Run the tests and commit.
 
 **Outcome 2**: Pulling out private methods increased clarity within the code and started to paint a picture of the
