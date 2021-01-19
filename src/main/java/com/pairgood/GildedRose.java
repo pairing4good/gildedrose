@@ -2,6 +2,7 @@ package com.pairgood;
 
 public class GildedRose {
     public static final int MAX_QUALITY = 50;
+    public static final int MIN_QUALITY = 0;
     Item[] items;
 
     public GildedRose(Item[] items) {
@@ -24,10 +25,8 @@ public class GildedRose {
             if (name.equals("Aged Brie") || name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                 quality = increaseQuality(quality);
             } else {
-                if (quality > 0) {
-                    if (!name.equals("Sulfuras, Hand of Ragnaros")) {
-                        quality = decreaseByOne(quality);
-                    }
+                if (!name.equals("Sulfuras, Hand of Ragnaros")) {
+                    quality = decreaseByOne(quality);
                 }
             }
 
@@ -44,10 +43,8 @@ public class GildedRose {
             }
 
             if(!name.equals("Aged Brie") && !name.equals("Backstage passes to a TAFKAL80ETC concert") && sellIn < 0){
-                if (quality > 0) {
-                    if (!name.equals("Sulfuras, Hand of Ragnaros")) {
-                        quality = decreaseByOne(quality);
-                    }
+                if (!name.equals("Sulfuras, Hand of Ragnaros")) {
+                    quality = decreaseByOne(quality);
                 }
             }
 
@@ -63,8 +60,19 @@ public class GildedRose {
         return quality;
     }
 
+    private int decreaseQuality(int quality) {
+        if (isGreaterThanMin(quality)) {
+            quality = decreaseByOne(quality);
+        }
+        return quality;
+    }
+
     private boolean isLessThanMax(int value) {
         return value < MAX_QUALITY;
+    }
+
+    private boolean isGreaterThanMin(int value) {
+        return value > MIN_QUALITY;
     }
 
     private int zeroOut(int value) {

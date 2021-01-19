@@ -223,3 +223,8 @@ Run the tests and commit on green.
 **Outcome 4**: Collapsing nested conditional statements increased the complexity of conditional statements and increase
 logical duplication.  However the overall [cyclomatic complexity](https://en.wikipedia.org/wiki/Cyclomatic_complexity) 
 of the code has dropped significantly.
+
+**Idea 5**: I would like to extract the `if (quality > 0)` with `quality = decreaseByOne(quality)` as 
+`int decreaseQuality(int quality)`.
+
+**Outcome 5**: 
