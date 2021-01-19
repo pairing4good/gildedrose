@@ -191,8 +191,10 @@ Eventually these groups of methods will be pulled out of the `GildedRose` class 
 is more natural to state the positive case rather than the negative case.
 1. Flip the conditional statement to remove the `!`'s from the conditional statement 
 `!name.equals("Aged Brie") && !name.equals("Backstage passes to a TAFKAL80ETC concert")`.  (The `&&` will need to be 
-flipped to `||`.)
+flipped to `||`.)  Run the tests and commit on green.
 1. Flip the conditional statement to remove the `!`'s from the conditional statement `!name.equals("Aged Brie")`.
+Run the tests and commit on green.
+
 1. I attempted to remove the `!` from `!name.equals("Sulfuras, Hand of Ragnaros")` and flip the condition but the 
 resulting structure was longer and less readable than what I started with so I reverted my changes.
     ```java
