@@ -14,20 +14,20 @@ public class GildedRose {
             int quality = items[i].quality;
             int sellIn = items[i].sellIn;
 
+            if (name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+                if (sellIn < 11) {
+                    quality = increaseQuality(quality);
+                }
+
+                if (sellIn < 6) {
+                    quality = increaseQuality(quality);
+                }
+            }
+
             if (name.equals("Aged Brie")
                     || name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                 if (isLessThanMax(quality)) {
                     quality = increaseByOne(quality);
-
-                    if (name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                        if (sellIn < 11) {
-                            quality = increaseQuality(quality);
-                        }
-
-                        if (sellIn < 6) {
-                            quality = increaseQuality(quality);
-                        }
-                    }
                 }
             } else {
                 if (quality > 0) {

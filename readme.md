@@ -208,3 +208,11 @@ resulting structure was longer and less readable than what I started with so I r
 negative case increases readability.  Furthermore, the addition of `!` is difficult to see and can create confusion and 
 an incorrect understanding of the code.  While I was unable to flip all of the negative case conditions to be positive, 
 the overall flow of the code is easier to read.
+
+**Idea 4**: I would like to collapse some of the levels of conditional nesting.  This would reduce complexity and
+simplify separate logical conditions.
+1. Move `if (name.equals("Backstage passes to a TAFKAL80ETC concert"))` up to the same level as 
+`if (name.equals("Aged Brie") || name.equals("Backstage passes to a TAFKAL80ETC concert"))`. 
+Run the tests and commit on green.
+
+**Outcome 4**: 
