@@ -229,3 +229,9 @@ of the code has dropped significantly.
 
 **Outcome 5**: Extracting this method sigificantly simplified the code, made it more readable and uncovered additional 
 opportunities to collapse nested if's.
+
+**Idea 6**: I would like to simplify if/else structures to independent if statements.  Once this is in place I wonder 
+if patterns will become evident that may lead to the next refactoring.
+
+**Outcome 6**: Moving to independent if statements increased duplication and made it more difficult to read.  Hopefully 
+independent statements will make it easier to identify patterns.
