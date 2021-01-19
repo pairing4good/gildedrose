@@ -214,5 +214,8 @@ simplify separate logical conditions.
 1. Move `if (name.equals("Backstage passes to a TAFKAL80ETC concert"))` up to the same level as 
 `if (name.equals("Aged Brie") || name.equals("Backstage passes to a TAFKAL80ETC concert"))`. 
 Run the tests and commit on green.
+1. Replace the `isLessThanMax(quality)` check and `quality = increaseByOne(quality)` pair with a call to the method 
+`increaseQuality` instead. Run the tests and commit on green.
+
 
 **Outcome 4**: 
