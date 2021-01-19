@@ -227,4 +227,5 @@ of the code has dropped significantly.
 **Idea 5**: I would like to extract the `if (quality > 0)` with `quality = decreaseByOne(quality)` as 
 `int decreaseQuality(int quality)`.
 
-**Outcome 5**: 
+**Outcome 5**: Extracting this method sigificantly simplified the code, made it more readable and uncovered additional 
+opportunities to collapse nested if's.
