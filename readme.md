@@ -220,4 +220,6 @@ Run the tests and commit on green.
 `if (name.equals("Aged Brie"))`. Run the tests and commit on green.
 1. Combine nested if's as `&&` conditions.  Run the tests and commit on green.
 
-**Outcome 4**: 
+**Outcome 4**: Collapsing nested conditional statements increased the complexity of conditional statements and increase
+logical duplication.  However the overall [cyclomatic complexity](https://en.wikipedia.org/wiki/Cyclomatic_complexity) 
+of the code has dropped significantly.
