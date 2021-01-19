@@ -33,15 +33,15 @@ public class GildedRose {
                 quality = decreaseByOne(quality);
             }
 
-            if (!name.equals("Sulfuras, Hand of Ragnaros")) {
-                sellIn = decreaseByOne(sellIn);
-            }
-
             if(!name.equals("Aged Brie") &&
                     !name.equals("Backstage passes to a TAFKAL80ETC concert") &&
                     !name.equals("Sulfuras, Hand of Ragnaros") &&
                     sellIn < 0){
                 quality = decreaseByOne(quality);
+            }
+
+            if (!name.equals("Sulfuras, Hand of Ragnaros")) {
+                sellIn = decreaseByOne(sellIn);
             }
 
             if (name.equals("Backstage passes to a TAFKAL80ETC concert") && sellIn < 0) {
