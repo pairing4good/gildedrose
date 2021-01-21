@@ -235,3 +235,7 @@ if patterns will become evident that may lead to the next refactoring.
 
 **Outcome 6**: Moving to independent if statements increased duplication and made it more difficult to read.  Hopefully 
 independent statements will make it easier to identify patterns.
+
+**Idea 7**: I would like to extract string names into constants to remove duplication
+
+**Outcome 7**: Extracting constants increases overall readability.

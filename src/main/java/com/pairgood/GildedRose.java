@@ -3,6 +3,10 @@ package com.pairgood;
 public class GildedRose {
     public static final int MAX_QUALITY = 50;
     public static final int MIN_QUALITY = 0;
+    public static final String BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert";
+    public static final String AGED_BRIE = "Aged Brie";
+    public static final String SULFURAS_HAND_OF_RAGNAROS = "Sulfuras, Hand of Ragnaros";
+
     Item[] items;
 
     public GildedRose(Item[] items) {
@@ -15,37 +19,35 @@ public class GildedRose {
             int quality = items[i].quality;
             int sellIn = items[i].sellIn;
 
-            if (name.equals("Backstage passes to a TAFKAL80ETC concert") && sellIn < 11) {
+            if (name.equals(BACKSTAGE_PASSES) && sellIn < 11) {
                 quality = increaseQuality(quality);
             }
 
-            if (name.equals("Backstage passes to a TAFKAL80ETC concert") && sellIn < 6) {
+            if (name.equals(BACKSTAGE_PASSES) && sellIn < 6) {
                 quality = increaseQuality(quality);
             }
 
-            if (name.equals("Aged Brie") || name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+            if (name.equals(AGED_BRIE) || name.equals(BACKSTAGE_PASSES)) {
                 quality = increaseQuality(quality);
             }
-            if (name.equals("Aged Brie") && sellIn < 0) {
+            if (name.equals(AGED_BRIE) && sellIn < 0) {
                 quality = increaseQuality(quality);
             }
 
-            if (!name.equals("Aged Brie") && !name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+            if (!name.equals(AGED_BRIE) && !name.equals(BACKSTAGE_PASSES)) {
                 quality = decreaseQuality(quality);
             }
 
-            if(!name.equals("Aged Brie") &&
-                    !name.equals("Backstage passes to a TAFKAL80ETC concert") &&
-                    !name.equals("Sulfuras, Hand of Ragnaros") &&
-                    sellIn < 0){
+            if(!name.equals(AGED_BRIE) && !name.equals(BACKSTAGE_PASSES) &&
+                    !name.equals(SULFURAS_HAND_OF_RAGNAROS) && sellIn < 0){
                 quality = decreaseQuality(quality);
             }
 
-            if (!name.equals("Sulfuras, Hand of Ragnaros")) {
+            if (!name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
                 sellIn = decreaseByOne(sellIn);
             }
 
-            if (name.equals("Backstage passes to a TAFKAL80ETC concert") && sellIn < 0) {
+            if (name.equals(BACKSTAGE_PASSES) && sellIn < 0) {
                 quality = zeroOut(quality);
             }
 
