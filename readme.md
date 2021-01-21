@@ -239,3 +239,8 @@ independent statements will make it easier to identify patterns.
 **Idea 7**: I would like to extract string names into constants to remove duplication
 
 **Outcome 7**: Extracting constants increases overall readability.
+
+**Idea 8**: I would like to encapsulate name checking into two methods in order to reduce the number of 
+`name.equals` calls within conditional statements.
+
+**Outcome 8**:  Encapsulating name checking into two methods significantly increased readability and simplified code.

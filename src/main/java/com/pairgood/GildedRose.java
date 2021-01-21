@@ -19,41 +19,56 @@ public class GildedRose {
             int quality = items[i].quality;
             int sellIn = items[i].sellIn;
 
-            if (name.equals(BACKSTAGE_PASSES) && sellIn < 11) {
+            if (matches(name, BACKSTAGE_PASSES) && sellIn < 11) {
                 quality = increaseQuality(quality);
             }
 
-            if (name.equals(BACKSTAGE_PASSES) && sellIn < 6) {
+            if (matches(name, BACKSTAGE_PASSES) && sellIn < 6) {
                 quality = increaseQuality(quality);
             }
 
-            if (name.equals(AGED_BRIE) || name.equals(BACKSTAGE_PASSES)) {
+            if (matches(name, AGED_BRIE, BACKSTAGE_PASSES)) {
                 quality = increaseQuality(quality);
             }
-            if (name.equals(AGED_BRIE) && sellIn < 0) {
+            if (matches(name, AGED_BRIE) && sellIn < 0) {
                 quality = increaseQuality(quality);
             }
 
-            if (!name.equals(AGED_BRIE) && !name.equals(BACKSTAGE_PASSES)) {
+            if (notMatch(name, AGED_BRIE, BACKSTAGE_PASSES)) {
                 quality = decreaseQuality(quality);
             }
 
-            if(!name.equals(AGED_BRIE) && !name.equals(BACKSTAGE_PASSES) &&
-                    !name.equals(SULFURAS_HAND_OF_RAGNAROS) && sellIn < 0){
+            if(notMatch(name, AGED_BRIE, BACKSTAGE_PASSES, SULFURAS_HAND_OF_RAGNAROS) && sellIn < 0){
                 quality = decreaseQuality(quality);
             }
 
-            if (!name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
+            if (notMatch(name, SULFURAS_HAND_OF_RAGNAROS)) {
                 sellIn = decreaseByOne(sellIn);
             }
 
-            if (name.equals(BACKSTAGE_PASSES) && sellIn < 0) {
+            if (matches(name, BACKSTAGE_PASSES) && sellIn < 0) {
                 quality = zeroOut(quality);
             }
 
             items[i].quality = quality;
             items[i].sellIn = sellIn;
         }
+    }
+
+    private boolean matches(String value, String... patterns){
+        boolean answer = false;
+
+        for(String pattern : patterns){
+            if(value.equals(pattern)){
+                answer = true;
+            }
+        }
+
+        return answer;
+    }
+
+    private boolean notMatch(String value, String... patterns){
+        return !matches(value, patterns);
     }
 
     private int increaseQuality(int quality) {
