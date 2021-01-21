@@ -244,3 +244,19 @@ independent statements will make it easier to identify patterns.
 `name.equals` calls within conditional statements.
 
 **Outcome 8**:  Encapsulating name checking into two methods significantly increased readability and simplified code.
+
+### Extract Class
+Now that much of the code is extracted out into reusable private methods, it's time to pull these methods out into new
+classes that have [single responsibilities](https://en.wikipedia.org/wiki/Single-responsibility_principle).
+1. Organize methods that have similar responsibilities together.
+1. Create a new class that describes this new responsibility.
+1. Copy the methods that belong in this new class and paste them in the new class.
+1. Inject the new class through 
+[constructor injection](https://en.wikipedia.org/wiki/Dependency_injection#Constructor_injection) into the 
+`GildedRose` class.
+1. Cut over to use the methods from the new class.
+1. Delete the unused private methods.
+
+The `GildedRose` class has fewer responsibilities.  While the names of the resulting classes are still unclear without 
+more business context, they contain what appear to be single responsibilities that can be tested independently from the 
+`GildedRose` class.
