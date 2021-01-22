@@ -1,6 +1,7 @@
 package com.pairgood;
 
 import com.pairgood.rule.quality.QualityRule;
+import com.pairgood.rule.quality.decrease.NotAgedBrieOrBackstagePassesRule;
 import com.pairgood.rule.quality.increase.AgedBrieOrBackstagePassesRule;
 import com.pairgood.rule.quality.increase.AgedBrieSellInLessThanZeroRule;
 import com.pairgood.rule.quality.increase.BackstagePassSellInLessThanElevenRule;
@@ -24,6 +25,7 @@ public class GildedRoseFactory {
         rules.add(new BackstagePassSellInLessThanSixRule(stringUtil, qualityUtil));
         rules.add(new AgedBrieOrBackstagePassesRule(stringUtil, qualityUtil));
         rules.add(new AgedBrieSellInLessThanZeroRule(stringUtil, qualityUtil));
+        rules.add(new NotAgedBrieOrBackstagePassesRule(stringUtil, qualityUtil));
 
         return new GildedRose(qualityUtil, mathUtil, stringUtil, rules);
     }

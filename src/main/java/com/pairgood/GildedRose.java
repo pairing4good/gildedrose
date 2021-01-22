@@ -40,10 +40,6 @@ public class GildedRose {
             int quality = existingItem.getQuality();
             int sellIn = existingItem.getSellIn();
 
-            if (stringUtil.notMatch(name, AGED_BRIE, BACKSTAGE_PASSES)) {
-                quality = qualityUtil.decreaseQuality(quality);
-            }
-
             if(stringUtil.notMatch(name, AGED_BRIE, BACKSTAGE_PASSES, SULFURAS_HAND_OF_RAGNAROS) && sellIn < 0){
                 quality = qualityUtil.decreaseQuality(quality);
             }

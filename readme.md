@@ -272,9 +272,9 @@ check a condition and do something pattern is similar to a rules engine approach
 `if` statements could be extracted into their own classes and injected into this class as a list or multiple
 lists of rules?
 
-1. Pull out a single rule into a class.
+1. Pull out a single quality increase rule into a class.
 1. Inject this rule into a list of rules used by the `GildedRose` class.
-1. Pull out a second rule into a class.
+1. Pull out a second quality increase rule into a class.
 1. Pull out a [common interface](https://en.wikipedia.org/wiki/Interface_segregation_principle) so that the rules can 
 be [run together](https://en.wikipedia.org/wiki/Polymorphism_(computer_science)) in a single list.
 
@@ -294,5 +294,6 @@ be [run together](https://en.wikipedia.org/wiki/Polymorphism_(computer_science))
     paradigm.
     1. Create a [factory](https://en.wikipedia.org/wiki/Factory_method_pattern) that is responsible for the creation of 
     the `GildedRose` in order to encapsulate complex creation knowledge in a single place.
-1. Pull out a third rule into a class.
-1. Pull out a fourth rule into a class.
+1. Pull out a third quality increase rule into a class.
+1. Pull out a fourth quality increase rule into a class.
+1. Pull out the first quality decrease rule.
