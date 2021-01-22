@@ -300,3 +300,25 @@ be [run together](https://en.wikipedia.org/wiki/Polymorphism_(computer_science))
 1. Pull out another quality decrease rule.
 1. Pull out the first sell in rule.
 1. Pull out the final rule.
+
+**Outcomes** The `GildedRose` class is small and has a clear responsibility.  Each rule is now encapsulated into 
+individual named classes with a clear, single responsibility.  Each rule has been independently tested.  The 
+`GildedRose` class now follows the [Open Closed Principle](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle) 
+which makes adding a new rule much simpler and independent from other rules.  This application is now
+[loosely coupled](https://en.wikipedia.org/wiki/Loose_coupling) which makes it easier to test and change.  Tests moved
+from high level, black box tests that ran the entire application, to small focused tests that test out all of the 
+scenarios related to the method under test.
+
+## Conclusion
+Working with legacy code requires patience and purposeful moves that slowly improve the code base.  As Kerievsky points
+out in his book [Refactoring to Patterns](https://www.amazon.com/Refactoring-Patterns-Joshua-Kerievsky/dp/0321213351) we 
+often move towards a desired destination or pattern.  But as we reshape the code, while remaining on green, it often 
+becomes clear that we need to move back away from a pattern too.  Often the best code does not follow any pattern 
+perfectly.  Our desired outcome is clean code that reads like well-written prose, not "perfect" code that follows all 
+the "right", "best" practices.  Refactoring is like peeling an onion.  As you work your way through each idea you will 
+uncover new layers of insights.  I intentionally did not have a plan before I started this journey.  I wanted to expose 
+my own thought process and resulting journey.  Many of my ideas did not lead the the outcomes I expected.  Many of my 
+short plays ended up in uglier code in the short run.  I was constantly testing ideas and seeing what happened.  This 
+approach is not only good for legacy code but it is also good for all code.  My first ideas are not my best ideas.  
+Many things are not clear until I try them.  Follow your nose.  Try things.  Make mistakes.  Incrementally improve your 
+code.  Shape your code into beautiful prose.
