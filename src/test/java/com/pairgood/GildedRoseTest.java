@@ -16,23 +16,11 @@ import static org.junit.Assert.*;
 
 public class GildedRoseTest {
 
-    private MathUtil mathUtil;
-    private QualityUtil qualityUtil;
-    private StringUtil stringUtil;
-    private List<QualityRule> rules;
     private GildedRose gildedRose;
 
     @Before
     public void setUp(){
-        mathUtil = new MathUtil();
-        qualityUtil = new QualityUtil(mathUtil);
-        stringUtil = new StringUtil();
-        rules = Arrays.asList(
-                new BackstagePassSellInLessThanElevenRule(stringUtil, qualityUtil),
-                new BackstagePassSellInLessThanSixRule(stringUtil, qualityUtil));
-        gildedRose = new GildedRose(qualityUtil, mathUtil, stringUtil, rules);
-
-
+        gildedRose = new GildedRoseFactory().create();
     }
 
     @Test

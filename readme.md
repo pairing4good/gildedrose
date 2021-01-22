@@ -282,7 +282,8 @@ be [run together](https://en.wikipedia.org/wiki/Polymorphism_(computer_science))
 classes are created and [reinjected](https://en.wikipedia.org/wiki/Dependency_injection#Constructor_injection) through 
 class constructors, class creation is getting more and more difficult.
 
-**Idea** I would like to move class creation to a factory in order to encapsulate creation knowledge into a single place.
+**Idea** I would like to move class creation to a [factory](https://en.wikipedia.org/wiki/Factory_method_pattern) in 
+order to encapsulate creation knowledge into a single place.
 1. Move the `Item[]` array out of the `GildedRose` constructor and add it as a parameter in the `updateQuality`.  It's 
 not clear why the `GildedRose` needs to hold the items in class level variables.  The `Item[]`
 [data](https://en.wikipedia.org/wiki/Object-oriented_programming) or state is only modified in a single method.  In 
@@ -291,3 +292,5 @@ contrast, the utilities are stateless and should remain in the constructor.
 move toward a more [functional](https://en.wikipedia.org/wiki/Functional_programming) style programing paradigm.  
 By returning a new `Item[]` each time the `updateQuality` method is called helps to move towards this new programming 
 paradigm.
+1. Create a [factory](https://en.wikipedia.org/wiki/Factory_method_pattern) that is responsible for the creation of 
+the `GildedRose` in order to encapsulate complex creation knowledge in a single place.
