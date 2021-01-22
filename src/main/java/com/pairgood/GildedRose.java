@@ -1,11 +1,15 @@
 package com.pairgood;
 
+import com.pairgood.rule.quality.increase.BackstagePassSellInLessThanElevenRule;
 import com.pairgood.util.MathUtil;
 import com.pairgood.util.QualityUtil;
 import com.pairgood.util.StringUtil;
 
+import java.util.List;
+
+import static com.pairgood.Names.BACKSTAGE_PASSES;
+
 public class GildedRose {
-    public static final String BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert";
     public static final String AGED_BRIE = "Aged Brie";
     public static final String SULFURAS_HAND_OF_RAGNAROS = "Sulfuras, Hand of Ragnaros";
 
@@ -13,12 +17,15 @@ public class GildedRose {
     private QualityUtil qualityUtil;
     private MathUtil mathUtil;
     private StringUtil stringUtil;
+    private List<BackstagePassSellInLessThanElevenRule> rules;
 
-    public GildedRose(Item[] items, QualityUtil qualityUtil, MathUtil mathUtil, StringUtil stringUtil) {
+    public GildedRose(Item[] items, QualityUtil qualityUtil, MathUtil mathUtil, StringUtil stringUtil,
+                      List<BackstagePassSellInLessThanElevenRule> rules) {
         this.items = items;
         this.qualityUtil = qualityUtil;
         this.mathUtil = mathUtil;
         this.stringUtil = stringUtil;
+        this.rules = rules;
     }
 
     public void updateQuality() {
@@ -27,8 +34,8 @@ public class GildedRose {
             int quality = items[i].getQuality();
             int sellIn = items[i].getSellIn();
 
-            if (stringUtil.matches(name, BACKSTAGE_PASSES) && sellIn < 11) {
-                quality = qualityUtil.increaseQuality(quality);
+            for(BackstagePassSellInLessThanElevenRule rule : rules){
+                quality = rule.run(items[i]);
             }
 
             if (stringUtil.matches(name, BACKSTAGE_PASSES) && sellIn < 6) {

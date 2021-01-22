@@ -264,3 +264,13 @@ classes that have [single responsibilities](https://en.wikipedia.org/wiki/Single
 The `GildedRose` class has fewer responsibilities.  While the names of the resulting classes are still unclear without 
 more business context, they contain what appear to be single responsibilities that can be tested independently from the 
 `GildedRose` class.
+
+#### Remaining Complexity
+The resulting `GildedRose` `updateQuality` method is much shorter, less complex, more readable and has fewer 
+responsibilities.  Nevertheless, the condition/action pairs still seem like conceptual duplication.  This 
+check a condition and do something pattern is similar to a rules engine approach.  What if each of these
+`if` statements could be extracted into their own classes and injected into this class as a list or multiple
+lists of rules?
+
+1. Pull out a single rule into a class.
+1. Inject this rule into a list of rules used by the `GildedRose` class.
