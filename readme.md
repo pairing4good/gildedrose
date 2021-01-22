@@ -353,7 +353,7 @@ uncover new layers of insights.
 
 I intentionally did not have a plan before I started this journey.  I wanted to expose 
 my own thought process and resulting journey.  Many of my ideas did not lead the the outcomes I expected.  Many of my 
-short plays ended up in uglier code in the short run.  I was constantly testing ideas and seeing what happened.  This 
+short plays resulted in uglier code in the short run.  I was constantly testing ideas and seeing what happened.  This 
 approach is not only good for legacy code but it is also good for all code.  My first ideas are not my best ideas. Many 
 things are not clear until I try them.  Follow your nose.  Try things.  Make mistakes.  Incrementally improve your 
 code.  Shape your code into beautiful prose.
