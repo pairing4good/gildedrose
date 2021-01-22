@@ -2,25 +2,15 @@ package com.pairgood;
 
 import com.pairgood.rule.quality.QualityRule;
 import com.pairgood.rule.sellin.SellInRule;
-import com.pairgood.util.MathUtil;
-import com.pairgood.util.StringUtil;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.pairgood.Names.BACKSTAGE_PASSES;
-
 public class GildedRose {
-
-    private MathUtil mathUtil;
-    private StringUtil stringUtil;
     private List<QualityRule> qualityRules;
     private List<SellInRule> sellInRules;
 
-    public GildedRose(MathUtil mathUtil, StringUtil stringUtil, List<QualityRule> qualityRules,
-                      List<SellInRule> sellInRules) {
-        this.mathUtil = mathUtil;
-        this.stringUtil = stringUtil;
+    public GildedRose(List<QualityRule> qualityRules, List<SellInRule> sellInRules) {
         this.qualityRules = qualityRules;
         this.sellInRules = sellInRules;
     }

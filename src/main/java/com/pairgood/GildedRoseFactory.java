@@ -37,6 +37,6 @@ public class GildedRoseFactory {
         List<SellInRule> sellInRules = new ArrayList<>();
         sellInRules.add(new NotSulfurasHandOfRagnorosRule(stringUtil, mathUtil));
 
-        return new GildedRose(mathUtil, stringUtil, qualityRules, sellInRules);
+        return new GildedRose(qualityRules, sellInRules);
     }
 }
