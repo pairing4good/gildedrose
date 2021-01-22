@@ -6,7 +6,7 @@ public class QualityUtil {
     public static final int MIN_QUALITY = 0;
     private MathUtil mathUtil;
 
-    public QualityUtil(MathUtil mathUtil){
+    public QualityUtil(MathUtil mathUtil) {
 
         this.mathUtil = mathUtil;
     }

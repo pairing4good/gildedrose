@@ -2,11 +2,11 @@ package com.pairgood.util;
 
 public class StringUtil {
 
-    public boolean matches(String value, String... patterns){
+    public boolean matches(String value, String... patterns) {
         boolean answer = false;
 
-        for(String pattern : patterns){
-            if(value.equals(pattern)){
+        for (String pattern : patterns) {
+            if (value.equals(pattern)) {
                 answer = true;
             }
         }
@@ -14,7 +14,7 @@ public class StringUtil {
         return answer;
     }
 
-    public boolean notMatch(String value, String... patterns){
+    public boolean notMatch(String value, String... patterns) {
         return !matches(value, patterns);
     }
 }

@@ -10,14 +10,14 @@ import org.junit.Test;
 
 import static com.pairgood.Names.AGED_BRIE;
 import static com.pairgood.Names.BACKSTAGE_PASSES;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class AgedBrieSellInLessThanZeroRuleTest {
 
     private QualityRule rule;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         rule = new AgedBrieSellInLessThanZeroRule(new StringUtil(), new QualityUtil(new MathUtil()));
     }
 

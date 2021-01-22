@@ -12,7 +12,7 @@ public class AgedBrieSellInLessThanZeroRule implements QualityRule {
     private StringUtil stringUtil;
     private QualityUtil qualityUtil;
 
-    public AgedBrieSellInLessThanZeroRule(StringUtil stringUtil, QualityUtil qualityUtil){
+    public AgedBrieSellInLessThanZeroRule(StringUtil stringUtil, QualityUtil qualityUtil) {
         this.stringUtil = stringUtil;
         this.qualityUtil = qualityUtil;
     }

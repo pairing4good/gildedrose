@@ -8,7 +8,7 @@ import com.pairgood.util.StringUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.pairgood.Names.*;
+import static com.pairgood.Names.BACKSTAGE_PASSES;
 
 public class GildedRose {
 
@@ -32,11 +32,11 @@ public class GildedRose {
             Item existingItem = items[i];
             String name = existingItem.getName();
 
-            for(SellInRule rule : sellInRules){
+            for (SellInRule rule : sellInRules) {
                 existingItem.setSellIn(rule.run(existingItem));
             }
 
-            for(QualityRule rule : qualityRules){
+            for (QualityRule rule : qualityRules) {
                 existingItem.setQuality(rule.run(existingItem));
             }
 

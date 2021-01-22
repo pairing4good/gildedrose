@@ -9,14 +9,14 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static com.pairgood.Names.BACKSTAGE_PASSES;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class BackstagePassSellInLessThanElevenRuleTest {
 
     private QualityRule rule;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         rule = new BackstagePassSellInLessThanElevenRule(new StringUtil(), new QualityUtil(new MathUtil()));
     }
 

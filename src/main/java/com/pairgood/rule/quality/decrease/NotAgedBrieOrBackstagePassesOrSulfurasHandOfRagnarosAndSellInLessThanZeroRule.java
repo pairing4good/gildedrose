@@ -13,7 +13,7 @@ public class NotAgedBrieOrBackstagePassesOrSulfurasHandOfRagnarosAndSellInLessTh
     private QualityUtil qualityUtil;
 
     public NotAgedBrieOrBackstagePassesOrSulfurasHandOfRagnarosAndSellInLessThanZeroRule(StringUtil stringUtil,
-                                                                                         QualityUtil qualityUtil){
+                                                                                         QualityUtil qualityUtil) {
         this.stringUtil = stringUtil;
         this.qualityUtil = qualityUtil;
     }
@@ -21,8 +21,8 @@ public class NotAgedBrieOrBackstagePassesOrSulfurasHandOfRagnarosAndSellInLessTh
 
     @Override
     public int run(Item item) {
-        if(stringUtil.notMatch(item.getName(), AGED_BRIE, BACKSTAGE_PASSES, SULFURAS_HAND_OF_RAGNAROS) &&
-                item.getSellIn() < 0){
+        if (stringUtil.notMatch(item.getName(), AGED_BRIE, BACKSTAGE_PASSES, SULFURAS_HAND_OF_RAGNAROS) &&
+                item.getSellIn() < 0) {
             return qualityUtil.decreaseQuality(item.getQuality());
         }
 

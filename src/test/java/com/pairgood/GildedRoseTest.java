@@ -1,25 +1,16 @@
 package com.pairgood;
 
-import com.pairgood.rule.quality.QualityRule;
-import com.pairgood.rule.quality.increase.BackstagePassSellInLessThanElevenRule;
-import com.pairgood.rule.quality.increase.BackstagePassSellInLessThanSixRule;
-import com.pairgood.util.MathUtil;
-import com.pairgood.util.QualityUtil;
-import com.pairgood.util.StringUtil;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.List;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class GildedRoseTest {
 
     private GildedRose gildedRose;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         gildedRose = new GildedRoseFactory().create();
     }
 
@@ -121,7 +112,6 @@ public class GildedRoseTest {
         assertEquals(0, secondItem.getSellIn());
         assertEquals(2, secondItem.getQuality());
     }
-
 
 
     @Test

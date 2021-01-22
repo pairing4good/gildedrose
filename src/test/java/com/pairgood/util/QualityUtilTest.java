@@ -3,7 +3,8 @@ package com.pairgood.util;
 import org.junit.Before;
 import org.junit.Test;
 
-import static com.pairgood.util.QualityUtil.*;
+import static com.pairgood.util.QualityUtil.MAX_QUALITY;
+import static com.pairgood.util.QualityUtil.MIN_QUALITY;
 import static org.junit.Assert.*;
 
 public class QualityUtilTest {
@@ -11,7 +12,7 @@ public class QualityUtilTest {
     private QualityUtil qualityUtil;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         qualityUtil = new QualityUtil(new MathUtil());
     }
 
@@ -76,7 +77,7 @@ public class QualityUtilTest {
 
     @Test
     public void isLessThanMax_WhenLessThanMax() {
-        int lessThanMax = MAX_QUALITY -1;
+        int lessThanMax = MAX_QUALITY - 1;
         assertTrue(qualityUtil.isLessThanMax(lessThanMax));
     }
 

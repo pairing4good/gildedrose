@@ -18,7 +18,7 @@ import java.util.List;
 
 public class GildedRoseFactory {
 
-    public GildedRose create(){
+    public GildedRose create() {
         MathUtil mathUtil = new MathUtil();
         StringUtil stringUtil = new StringUtil();
         QualityUtil qualityUtil = new QualityUtil(mathUtil);

@@ -13,7 +13,7 @@ public class NotAgedBrieOrBackstagePassesRule implements QualityRule {
     private StringUtil stringUtil;
     private QualityUtil qualityUtil;
 
-    public NotAgedBrieOrBackstagePassesRule(StringUtil stringUtil, QualityUtil qualityUtil){
+    public NotAgedBrieOrBackstagePassesRule(StringUtil stringUtil, QualityUtil qualityUtil) {
         this.stringUtil = stringUtil;
         this.qualityUtil = qualityUtil;
     }

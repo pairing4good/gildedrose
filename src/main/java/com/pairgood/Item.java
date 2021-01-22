@@ -27,12 +27,12 @@ public class Item {
         return sellIn;
     }
 
-    public int getQuality() {
-        return quality;
-    }
-
     public void setSellIn(int sellIn) {
         this.sellIn = sellIn;
+    }
+
+    public int getQuality() {
+        return quality;
     }
 
     public void setQuality(int quality) {

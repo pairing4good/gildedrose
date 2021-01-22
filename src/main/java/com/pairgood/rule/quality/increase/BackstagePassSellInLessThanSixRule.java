@@ -12,12 +12,12 @@ public class BackstagePassSellInLessThanSixRule implements QualityRule {
     private StringUtil stringUtil;
     private QualityUtil qualityUtil;
 
-    public BackstagePassSellInLessThanSixRule(StringUtil stringUtil, QualityUtil qualityUtil){
+    public BackstagePassSellInLessThanSixRule(StringUtil stringUtil, QualityUtil qualityUtil) {
         this.stringUtil = stringUtil;
         this.qualityUtil = qualityUtil;
     }
 
-    public int run(Item item){
+    public int run(Item item) {
         if (stringUtil.matches(item.getName(), BACKSTAGE_PASSES) && item.getSellIn() < 6) {
             return qualityUtil.increaseQuality(item.getQuality());
         }
