@@ -1,5 +1,6 @@
 package com.pairgood;
 
+import com.pairgood.rule.quality.QualityRule;
 import com.pairgood.rule.quality.increase.BackstagePassSellInLessThanElevenRule;
 import com.pairgood.util.MathUtil;
 import com.pairgood.util.QualityUtil;
@@ -17,10 +18,10 @@ public class GildedRose {
     private QualityUtil qualityUtil;
     private MathUtil mathUtil;
     private StringUtil stringUtil;
-    private List<BackstagePassSellInLessThanElevenRule> rules;
+    private List<QualityRule> rules;
 
     public GildedRose(Item[] items, QualityUtil qualityUtil, MathUtil mathUtil, StringUtil stringUtil,
-                      List<BackstagePassSellInLessThanElevenRule> rules) {
+                      List<QualityRule> rules) {
         this.items = items;
         this.qualityUtil = qualityUtil;
         this.mathUtil = mathUtil;
@@ -30,17 +31,15 @@ public class GildedRose {
 
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
-            String name = items[i].getName();
-            int quality = items[i].getQuality();
-            int sellIn = items[i].getSellIn();
+            Item item = items[i];
+            String name = item.getName();
 
-            for(BackstagePassSellInLessThanElevenRule rule : rules){
-                quality = rule.run(items[i]);
+            for(QualityRule rule : rules){
+                item.setQuality(rule.run(item));
             }
 
-            if (stringUtil.matches(name, BACKSTAGE_PASSES) && sellIn < 6) {
-                quality = qualityUtil.increaseQuality(quality);
-            }
+            int quality = item.getQuality();
+            int sellIn = item.getSellIn();
 
             if (stringUtil.matches(name, AGED_BRIE, BACKSTAGE_PASSES)) {
                 quality = qualityUtil.increaseQuality(quality);
@@ -65,8 +64,8 @@ public class GildedRose {
                 quality = mathUtil.zeroOut(quality);
             }
 
-            items[i].setQuality(quality);
-            items[i].setSellIn(sellIn);
+            item.setQuality(quality);
+            item.setSellIn(sellIn);
         }
     }
 }

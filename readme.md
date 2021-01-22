@@ -274,3 +274,6 @@ lists of rules?
 
 1. Pull out a single rule into a class.
 1. Inject this rule into a list of rules used by the `GildedRose` class.
+1. Pull out a second rule into a class.
+1. Pull out a [common interface](https://en.wikipedia.org/wiki/Interface_segregation_principle) so that the rules can 
+be [run together](https://en.wikipedia.org/wiki/Polymorphism_(computer_science)) in a single list.
