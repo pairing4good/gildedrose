@@ -1,8 +1,8 @@
 package com.pairgood;
 
 import com.pairgood.rule.quality.QualityRule;
+import com.pairgood.rule.sellin.SellInRule;
 import com.pairgood.util.MathUtil;
-import com.pairgood.util.QualityUtil;
 import com.pairgood.util.StringUtil;
 
 import java.util.ArrayList;
@@ -12,16 +12,17 @@ import static com.pairgood.Names.*;
 
 public class GildedRose {
 
-    private QualityUtil qualityUtil;
     private MathUtil mathUtil;
     private StringUtil stringUtil;
-    private List<QualityRule> rules;
+    private List<QualityRule> qualityRules;
+    private List<SellInRule> sellInRules;
 
-    public GildedRose(QualityUtil qualityUtil, MathUtil mathUtil, StringUtil stringUtil, List<QualityRule> rules) {
-        this.qualityUtil = qualityUtil;
+    public GildedRose(MathUtil mathUtil, StringUtil stringUtil, List<QualityRule> qualityRules,
+                      List<SellInRule> sellInRules) {
         this.mathUtil = mathUtil;
         this.stringUtil = stringUtil;
-        this.rules = rules;
+        this.qualityRules = qualityRules;
+        this.sellInRules = sellInRules;
     }
 
     public Item[] updateQuality(Item[] items) {
@@ -31,18 +32,16 @@ public class GildedRose {
             Item existingItem = items[i];
             String name = existingItem.getName();
 
-            for(QualityRule rule : rules){
+            for(SellInRule rule : sellInRules){
+                existingItem.setSellIn(rule.run(existingItem));
+            }
+
+            for(QualityRule rule : qualityRules){
                 existingItem.setQuality(rule.run(existingItem));
             }
 
             int quality = existingItem.getQuality();
             int sellIn = existingItem.getSellIn();
-
-
-
-            if (stringUtil.notMatch(name, SULFURAS_HAND_OF_RAGNAROS)) {
-                sellIn = mathUtil.decreaseByOne(sellIn);
-            }
 
             if (stringUtil.matches(name, BACKSTAGE_PASSES) && sellIn < 0) {
                 quality = mathUtil.zeroOut(quality);

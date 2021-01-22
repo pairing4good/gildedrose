@@ -1,7 +1,6 @@
 package com.pairgood.rule.quality;
 
-import com.pairgood.Item;
+import com.pairgood.rule.ItemRule;
 
-public interface QualityRule {
-    int run(Item item);
+public interface QualityRule extends ItemRule {
 }

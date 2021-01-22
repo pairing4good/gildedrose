@@ -7,6 +7,8 @@ import com.pairgood.rule.quality.increase.AgedBrieOrBackstagePassesRule;
 import com.pairgood.rule.quality.increase.AgedBrieSellInLessThanZeroRule;
 import com.pairgood.rule.quality.increase.BackstagePassSellInLessThanElevenRule;
 import com.pairgood.rule.quality.increase.BackstagePassSellInLessThanSixRule;
+import com.pairgood.rule.sellin.SellInRule;
+import com.pairgood.rule.sellin.decrease.NotSulfurasHandOfRagnorosRule;
 import com.pairgood.util.MathUtil;
 import com.pairgood.util.QualityUtil;
 import com.pairgood.util.StringUtil;
@@ -21,15 +23,18 @@ public class GildedRoseFactory {
         StringUtil stringUtil = new StringUtil();
         QualityUtil qualityUtil = new QualityUtil(mathUtil);
 
-        List<QualityRule> rules = new ArrayList<>();
-        rules.add(new BackstagePassSellInLessThanElevenRule(stringUtil, qualityUtil));
-        rules.add(new BackstagePassSellInLessThanSixRule(stringUtil, qualityUtil));
-        rules.add(new AgedBrieOrBackstagePassesRule(stringUtil, qualityUtil));
-        rules.add(new AgedBrieSellInLessThanZeroRule(stringUtil, qualityUtil));
-        rules.add(new NotAgedBrieOrBackstagePassesRule(stringUtil, qualityUtil));
-        rules.add(new NotAgedBrieOrBackstagePassesOrSulfurasHandOfRagnarosAndSellInLessThanZeroRule(
+        List<QualityRule> qualityRules = new ArrayList<>();
+        qualityRules.add(new BackstagePassSellInLessThanElevenRule(stringUtil, qualityUtil));
+        qualityRules.add(new BackstagePassSellInLessThanSixRule(stringUtil, qualityUtil));
+        qualityRules.add(new AgedBrieOrBackstagePassesRule(stringUtil, qualityUtil));
+        qualityRules.add(new AgedBrieSellInLessThanZeroRule(stringUtil, qualityUtil));
+        qualityRules.add(new NotAgedBrieOrBackstagePassesRule(stringUtil, qualityUtil));
+        qualityRules.add(new NotAgedBrieOrBackstagePassesOrSulfurasHandOfRagnarosAndSellInLessThanZeroRule(
                 stringUtil, qualityUtil));
 
-        return new GildedRose(qualityUtil, mathUtil, stringUtil, rules);
+        List<SellInRule> sellInRules = new ArrayList<>();
+        sellInRules.add(new NotSulfurasHandOfRagnorosRule(stringUtil, mathUtil));
+
+        return new GildedRose(mathUtil, stringUtil, qualityRules, sellInRules);
     }
 }
