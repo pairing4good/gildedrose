@@ -7,8 +7,8 @@ import com.pairgood.util.StringUtil;
 import org.junit.Before;
 import org.junit.Test;
 
-import static com.pairgood.Names.*;
-import static org.junit.Assert.*;
+import static com.pairgood.Names.BACKSTAGE_PASSES;
+import static org.junit.Assert.assertEquals;
 
 public class BackstagePassSellInLessThanZeroRuleTest {
 
