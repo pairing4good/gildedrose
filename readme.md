@@ -287,3 +287,7 @@ class constructors, class creation is getting more and more difficult.
 not clear why the `GildedRose` needs to hold the items in class level variables.  The `Item[]`
 [data](https://en.wikipedia.org/wiki/Object-oriented_programming) or state is only modified in a single method.  In 
 contrast, the utilities are stateless and should remain in the constructor.
+1. Remove the `updateQuality` methods [side effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science)) and
+move toward a more [functional](https://en.wikipedia.org/wiki/Functional_programming) style programing paradigm.  
+By returning a new `Item[]` each time the `updateQuality` method is called helps to move towards this new programming 
+paradigm.

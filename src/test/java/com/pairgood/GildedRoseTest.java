@@ -37,10 +37,11 @@ public class GildedRoseTest {
 
     @Test
     public void updateQuality_NotAgedBrie() {
-        Item firstItem = new Item("Not Aged Brie", 1, 1);
-        Item[] items = {firstItem};
+        Item[] items = {new Item("Not Aged Brie", 1, 1)};
 
-        gildedRose.updateQuality(items);
+        Item[] item = gildedRose.updateQuality(items);
+
+        Item firstItem = item[0];
 
         assertEquals("Not Aged Brie", firstItem.getName());
         assertEquals(0, firstItem.getSellIn());
@@ -49,10 +50,11 @@ public class GildedRoseTest {
 
     @Test
     public void updateQuality_AgedBrie() {
-        Item firstItem = new Item("Aged Brie", 1, 1);
-        Item[] items = {firstItem};
+        Item[] items = {new Item("Aged Brie", 1, 1)};
 
-        gildedRose.updateQuality(items);
+        Item[] item = gildedRose.updateQuality(items);
+
+        Item firstItem = item[0];
 
         assertEquals("Aged Brie", firstItem.getName());
         assertEquals(0, firstItem.getSellIn());
@@ -62,10 +64,11 @@ public class GildedRoseTest {
 
     @Test
     public void updateQuality_BackstagePasses() {
-        Item firstItem = new Item("Backstage passes to a TAFKAL80ETC concert", 1, 1);
-        Item[] items = {firstItem};
+        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert", 1, 1)};
 
-        gildedRose.updateQuality(items);
+        Item[] item = gildedRose.updateQuality(items);
+
+        Item firstItem = item[0];
 
         assertEquals("Backstage passes to a TAFKAL80ETC concert", firstItem.getName());
         assertEquals(0, firstItem.getSellIn());
@@ -74,10 +77,11 @@ public class GildedRoseTest {
 
     @Test
     public void updateQuality_SellInNegativeNumber_AndNotMatch() {
-        Item firstItem = new Item("Not a Match", -1, 10);
-        Item[] items = {firstItem};
+        Item[] items = {new Item("Not a Match", -1, 10)};
 
-        gildedRose.updateQuality(items);
+        Item[] item = gildedRose.updateQuality(items);
+
+        Item firstItem = item[0];
 
         assertEquals("Not a Match", firstItem.getName());
         assertEquals(-2, firstItem.getSellIn());
@@ -86,10 +90,11 @@ public class GildedRoseTest {
 
     @Test
     public void updateQuality_SellInNegativeNumber_AndBackstagePasses() {
-        Item firstItem = new Item("Backstage passes to a TAFKAL80ETC concert", -1, 10);
-        Item[] items = {firstItem};
+        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert", -1, 10)};
 
-        gildedRose.updateQuality(items);
+        Item[] item = gildedRose.updateQuality(items);
+
+        Item firstItem = item[0];
 
         assertEquals("Backstage passes to a TAFKAL80ETC concert", firstItem.getName());
         assertEquals(-2, firstItem.getSellIn());
@@ -98,10 +103,11 @@ public class GildedRoseTest {
 
     @Test
     public void updateQuality_SellInNegativeNumber_AndAgedBrie() {
-        Item firstItem = new Item("Aged Brie", -1, 10);
-        Item[] items = {firstItem};
+        Item[] items = {new Item("Aged Brie", -1, 10)};
 
-        gildedRose.updateQuality(items);
+        Item[] item = gildedRose.updateQuality(items);
+
+        Item firstItem = item[0];
 
         assertEquals("Aged Brie", firstItem.getName());
         assertEquals(-2, firstItem.getSellIn());
@@ -110,11 +116,14 @@ public class GildedRoseTest {
 
     @Test
     public void updateQuality_MultipleItems() {
-        Item firstItem = new Item("Not Aged Brie", 1, 1);
-        Item secondItem = new Item("Aged Brie", 1, 1);
-        Item[] items = {firstItem, secondItem};
+        Item[] items = {
+                new Item("Not Aged Brie", 1, 1),
+                new Item("Aged Brie", 1, 1)};
 
-        gildedRose.updateQuality(items);
+        Item[] item = gildedRose.updateQuality(items);
+
+        Item firstItem = item[0];
+        Item secondItem = item[1];
 
         assertEquals("Not Aged Brie", firstItem.getName());
         assertEquals(0, firstItem.getSellIn());
@@ -129,10 +138,11 @@ public class GildedRoseTest {
 
     @Test
     public void updateQuality_AgedBrie_WithMaxQuality() {
-        Item firstItem = new Item("Aged Brie", 1, 50);
-        Item[] items = {firstItem};
+        Item[] items = {new Item("Aged Brie", 1, 50)};
 
-        gildedRose.updateQuality(items);
+        Item[] item = gildedRose.updateQuality(items);
+
+        Item firstItem = item[0];
 
         assertEquals("Aged Brie", firstItem.getName());
         assertEquals(0, firstItem.getSellIn());

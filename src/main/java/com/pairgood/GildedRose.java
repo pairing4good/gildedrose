@@ -5,6 +5,7 @@ import com.pairgood.util.MathUtil;
 import com.pairgood.util.QualityUtil;
 import com.pairgood.util.StringUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.pairgood.Names.BACKSTAGE_PASSES;
@@ -25,17 +26,19 @@ public class GildedRose {
         this.rules = rules;
     }
 
-    public void updateQuality(Item[] items) {
+    public Item[] updateQuality(Item[] items) {
+        List<Item> updatedItems = new ArrayList<>();
+
         for (int i = 0; i < items.length; i++) {
-            Item item = items[i];
-            String name = item.getName();
+            Item existingItem = items[i];
+            String name = existingItem.getName();
 
             for(QualityRule rule : rules){
-                item.setQuality(rule.run(item));
+                existingItem.setQuality(rule.run(existingItem));
             }
 
-            int quality = item.getQuality();
-            int sellIn = item.getSellIn();
+            int quality = existingItem.getQuality();
+            int sellIn = existingItem.getSellIn();
 
             if (stringUtil.matches(name, AGED_BRIE, BACKSTAGE_PASSES)) {
                 quality = qualityUtil.increaseQuality(quality);
@@ -60,8 +63,9 @@ public class GildedRose {
                 quality = mathUtil.zeroOut(quality);
             }
 
-            item.setQuality(quality);
-            item.setSellIn(sellIn);
+            updatedItems.add(new Item(name, sellIn, quality));
         }
+
+        return updatedItems.toArray(new Item[]{});
     }
 }
