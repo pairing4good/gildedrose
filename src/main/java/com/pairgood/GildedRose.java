@@ -8,10 +8,10 @@ import com.pairgood.util.StringUtil;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.pairgood.Names.AGED_BRIE;
 import static com.pairgood.Names.BACKSTAGE_PASSES;
 
 public class GildedRose {
-    public static final String AGED_BRIE = "Aged Brie";
     public static final String SULFURAS_HAND_OF_RAGNAROS = "Sulfuras, Hand of Ragnaros";
 
     private QualityUtil qualityUtil;
@@ -40,9 +40,7 @@ public class GildedRose {
             int quality = existingItem.getQuality();
             int sellIn = existingItem.getSellIn();
 
-            if (stringUtil.matches(name, AGED_BRIE, BACKSTAGE_PASSES)) {
-                quality = qualityUtil.increaseQuality(quality);
-            }
+
             if (stringUtil.matches(name, AGED_BRIE) && sellIn < 0) {
                 quality = qualityUtil.increaseQuality(quality);
             }

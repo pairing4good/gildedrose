@@ -1,6 +1,7 @@
 package com.pairgood.rule.quality.increase;
 
 import com.pairgood.Item;
+import com.pairgood.rule.quality.QualityRule;
 import com.pairgood.util.MathUtil;
 import com.pairgood.util.QualityUtil;
 import com.pairgood.util.StringUtil;
@@ -12,7 +13,7 @@ import static org.junit.Assert.*;
 
 public class BackstagePassSellInLessThanSixRuleTest {
 
-    private BackstagePassSellInLessThanSixRule rule;
+    private QualityRule rule;
 
     @Before
     public void setUp(){
