@@ -1,7 +1,6 @@
 package com.pairgood;
 
 import com.pairgood.rule.quality.QualityRule;
-import com.pairgood.rule.quality.increase.BackstagePassSellInLessThanElevenRule;
 import com.pairgood.util.MathUtil;
 import com.pairgood.util.QualityUtil;
 import com.pairgood.util.StringUtil;
@@ -14,22 +13,19 @@ public class GildedRose {
     public static final String AGED_BRIE = "Aged Brie";
     public static final String SULFURAS_HAND_OF_RAGNAROS = "Sulfuras, Hand of Ragnaros";
 
-    private Item[] items;
     private QualityUtil qualityUtil;
     private MathUtil mathUtil;
     private StringUtil stringUtil;
     private List<QualityRule> rules;
 
-    public GildedRose(Item[] items, QualityUtil qualityUtil, MathUtil mathUtil, StringUtil stringUtil,
-                      List<QualityRule> rules) {
-        this.items = items;
+    public GildedRose(QualityUtil qualityUtil, MathUtil mathUtil, StringUtil stringUtil, List<QualityRule> rules) {
         this.qualityUtil = qualityUtil;
         this.mathUtil = mathUtil;
         this.stringUtil = stringUtil;
         this.rules = rules;
     }
 
-    public void updateQuality() {
+    public void updateQuality(Item[] items) {
         for (int i = 0; i < items.length; i++) {
             Item item = items[i];
             String name = item.getName();

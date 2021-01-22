@@ -277,3 +277,13 @@ lists of rules?
 1. Pull out a second rule into a class.
 1. Pull out a [common interface](https://en.wikipedia.org/wiki/Interface_segregation_principle) so that the rules can 
 be [run together](https://en.wikipedia.org/wiki/Polymorphism_(computer_science)) in a single list.
+
+**Observation** As more an more [single responsibilities](https://en.wikipedia.org/wiki/Single-responsibility_principle) 
+classes are created and [reinjected](https://en.wikipedia.org/wiki/Dependency_injection#Constructor_injection) through 
+class constructors, class creation is getting more and more difficult.
+
+**Idea** I would like to move class creation to a factory in order to encapsulate creation knowledge into a single place.
+1. Move the `Item[]` array out of the `GildedRose` constructor and add it as a parameter in the `updateQuality`.  It's 
+not clear why the `GildedRose` needs to hold the items in class level variables.  The `Item[]`
+[data](https://en.wikipedia.org/wiki/Object-oriented_programming) or state is only modified in a single method.  In 
+contrast, the utilities are stateless and should remain in the constructor.

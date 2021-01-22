@@ -20,6 +20,7 @@ public class GildedRoseTest {
     private QualityUtil qualityUtil;
     private StringUtil stringUtil;
     private List<QualityRule> rules;
+    private GildedRose gildedRose;
 
     @Before
     public void setUp(){
@@ -29,17 +30,17 @@ public class GildedRoseTest {
         rules = Arrays.asList(
                 new BackstagePassSellInLessThanElevenRule(stringUtil, qualityUtil),
                 new BackstagePassSellInLessThanSixRule(stringUtil, qualityUtil));
+        gildedRose = new GildedRose(qualityUtil, mathUtil, stringUtil, rules);
+
 
     }
-
 
     @Test
     public void updateQuality_NotAgedBrie() {
         Item firstItem = new Item("Not Aged Brie", 1, 1);
         Item[] items = {firstItem};
-        GildedRose gildedRose = new GildedRose(items, qualityUtil, mathUtil, stringUtil, rules);
 
-        gildedRose.updateQuality();
+        gildedRose.updateQuality(items);
 
         assertEquals("Not Aged Brie", firstItem.getName());
         assertEquals(0, firstItem.getSellIn());
@@ -50,9 +51,8 @@ public class GildedRoseTest {
     public void updateQuality_AgedBrie() {
         Item firstItem = new Item("Aged Brie", 1, 1);
         Item[] items = {firstItem};
-        GildedRose gildedRose = new GildedRose(items, qualityUtil, mathUtil, stringUtil, rules);
 
-        gildedRose.updateQuality();
+        gildedRose.updateQuality(items);
 
         assertEquals("Aged Brie", firstItem.getName());
         assertEquals(0, firstItem.getSellIn());
@@ -64,9 +64,8 @@ public class GildedRoseTest {
     public void updateQuality_BackstagePasses() {
         Item firstItem = new Item("Backstage passes to a TAFKAL80ETC concert", 1, 1);
         Item[] items = {firstItem};
-        GildedRose gildedRose = new GildedRose(items, qualityUtil, mathUtil, stringUtil, rules);
 
-        gildedRose.updateQuality();
+        gildedRose.updateQuality(items);
 
         assertEquals("Backstage passes to a TAFKAL80ETC concert", firstItem.getName());
         assertEquals(0, firstItem.getSellIn());
@@ -77,9 +76,8 @@ public class GildedRoseTest {
     public void updateQuality_SellInNegativeNumber_AndNotMatch() {
         Item firstItem = new Item("Not a Match", -1, 10);
         Item[] items = {firstItem};
-        GildedRose gildedRose = new GildedRose(items, qualityUtil, mathUtil, stringUtil, rules);
 
-        gildedRose.updateQuality();
+        gildedRose.updateQuality(items);
 
         assertEquals("Not a Match", firstItem.getName());
         assertEquals(-2, firstItem.getSellIn());
@@ -90,9 +88,8 @@ public class GildedRoseTest {
     public void updateQuality_SellInNegativeNumber_AndBackstagePasses() {
         Item firstItem = new Item("Backstage passes to a TAFKAL80ETC concert", -1, 10);
         Item[] items = {firstItem};
-        GildedRose gildedRose = new GildedRose(items, qualityUtil, mathUtil, stringUtil, rules);
 
-        gildedRose.updateQuality();
+        gildedRose.updateQuality(items);
 
         assertEquals("Backstage passes to a TAFKAL80ETC concert", firstItem.getName());
         assertEquals(-2, firstItem.getSellIn());
@@ -103,9 +100,8 @@ public class GildedRoseTest {
     public void updateQuality_SellInNegativeNumber_AndAgedBrie() {
         Item firstItem = new Item("Aged Brie", -1, 10);
         Item[] items = {firstItem};
-        GildedRose gildedRose = new GildedRose(items, qualityUtil, mathUtil, stringUtil, rules);
 
-        gildedRose.updateQuality();
+        gildedRose.updateQuality(items);
 
         assertEquals("Aged Brie", firstItem.getName());
         assertEquals(-2, firstItem.getSellIn());
@@ -117,9 +113,8 @@ public class GildedRoseTest {
         Item firstItem = new Item("Not Aged Brie", 1, 1);
         Item secondItem = new Item("Aged Brie", 1, 1);
         Item[] items = {firstItem, secondItem};
-        GildedRose gildedRose = new GildedRose(items, qualityUtil, mathUtil, stringUtil, rules);
 
-        gildedRose.updateQuality();
+        gildedRose.updateQuality(items);
 
         assertEquals("Not Aged Brie", firstItem.getName());
         assertEquals(0, firstItem.getSellIn());
@@ -136,9 +131,8 @@ public class GildedRoseTest {
     public void updateQuality_AgedBrie_WithMaxQuality() {
         Item firstItem = new Item("Aged Brie", 1, 50);
         Item[] items = {firstItem};
-        GildedRose gildedRose = new GildedRose(items, qualityUtil, mathUtil, stringUtil, rules);
 
-        gildedRose.updateQuality();
+        gildedRose.updateQuality(items);
 
         assertEquals("Aged Brie", firstItem.getName());
         assertEquals(0, firstItem.getSellIn());
