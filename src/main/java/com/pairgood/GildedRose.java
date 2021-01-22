@@ -40,14 +40,7 @@ public class GildedRose {
                 existingItem.setQuality(rule.run(existingItem));
             }
 
-            int quality = existingItem.getQuality();
-            int sellIn = existingItem.getSellIn();
-
-            if (stringUtil.matches(name, BACKSTAGE_PASSES) && sellIn < 0) {
-                quality = mathUtil.zeroOut(quality);
-            }
-
-            updatedItems.add(new Item(name, sellIn, quality));
+            updatedItems.add(new Item(name, existingItem.getSellIn(), existingItem.getQuality()));
         }
 
         return updatedItems.toArray(new Item[]{});

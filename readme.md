@@ -298,3 +298,5 @@ be [run together](https://en.wikipedia.org/wiki/Polymorphism_(computer_science))
 1. Pull out a fourth quality increase rule into a class.
 1. Pull out the first quality decrease rule.
 1. Pull out another quality decrease rule.
+1. Pull out the first sell in rule.
+1. Pull out the final rule.
