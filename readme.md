@@ -295,3 +295,4 @@ be [run together](https://en.wikipedia.org/wiki/Polymorphism_(computer_science))
     1. Create a [factory](https://en.wikipedia.org/wiki/Factory_method_pattern) that is responsible for the creation of 
     the `GildedRose` in order to encapsulate complex creation knowledge in a single place.
 1. Pull out a third rule into a class.
+1. Pull out a fourth rule into a class.
