@@ -8,11 +8,9 @@ import com.pairgood.util.StringUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.pairgood.Names.AGED_BRIE;
-import static com.pairgood.Names.BACKSTAGE_PASSES;
+import static com.pairgood.Names.*;
 
 public class GildedRose {
-    public static final String SULFURAS_HAND_OF_RAGNAROS = "Sulfuras, Hand of Ragnaros";
 
     private QualityUtil qualityUtil;
     private MathUtil mathUtil;
@@ -40,9 +38,7 @@ public class GildedRose {
             int quality = existingItem.getQuality();
             int sellIn = existingItem.getSellIn();
 
-            if(stringUtil.notMatch(name, AGED_BRIE, BACKSTAGE_PASSES, SULFURAS_HAND_OF_RAGNAROS) && sellIn < 0){
-                quality = qualityUtil.decreaseQuality(quality);
-            }
+
 
             if (stringUtil.notMatch(name, SULFURAS_HAND_OF_RAGNAROS)) {
                 sellIn = mathUtil.decreaseByOne(sellIn);
