@@ -3,7 +3,11 @@
 The Gilded Rose kata provides an example of the kind of code we often find in 
 [legacy](https://en.wikipedia.org/wiki/Legacy_code#Modern_interpretations) codebases.  This repo provides a 
 step-by-step approach to characterization testing and [refactoring](https://en.wikipedia.org/wiki/Code_refactoring) 
-this code. 
+this code. The commit history of this repo captures incremental `readme.md` explanations with matching code changes. 
+This step-by-step commit approach gives readers a view into my thought process and journey.  As you will see much of 
+refactoring is experimentation rather than a clear A to Z process.  While I decided to follow the steps I committed, 
+it's only one of many ways to incrementally improve this code base. Follow your own instincts and see if your changes
+lead to cleaner code while remaining on green.  Enjoy the journey. 
 
 > "Michael Feathers introduced a definition of legacy code as code without tests" 
 https://en.wikipedia.org/wiki/Legacy_code#Modern_interpretations
