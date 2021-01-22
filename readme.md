@@ -31,6 +31,7 @@ overall behavior
 1. [Inject](https://en.wikipedia.org/wiki/Dependency_inversion_principle) new classes back into the original class
 
 ## Walk-Through
+**code snapshot** [Code before tests](https://github.com/pairing4good/gildedrose/commit/481d82aeee33e35bb965f155001e6d6e472ea715)
 
 ### Characterization Testing
 1. Write the first [characterization test](https://michaelfeathers.silvrback.com/characterization-testing) for the  
@@ -78,6 +79,8 @@ coverage https://www.jetbrains.com/help/idea/running-test-with-coverage.html)
     
 1. Write additional characterization tests until there are enough tests to cover all of the method-under-test's 
 conditional behavior.
+
+**code snapshot** [Characterization Tests](https://github.com/pairing4good/gildedrose/commit/8c1e72b49c587e082fb7b496d80b006f47d6a11b)
    
 ### Refactoring
 >“Clean code is simple and direct. Clean code reads like well-written [prose](https://en.wikipedia.org/wiki/Prose). 
